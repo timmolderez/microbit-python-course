@@ -1,4 +1,6 @@
-
+<div style="position: fixed;top: 1em;right: 1em">
+  <a href="" style="text-decoration:none"><b>^^^</b></a>
+</div>
 
 <h1>Creatief programmeren met Python & micro:bit</h1>
 
@@ -8,7 +10,7 @@
 
 [TOC]
 
-## Micro:bit introductie
+## 1. Micro:bit introductie
 
 De [micro:bit](http://microbit.org/nl) is een *embedded systeem*, een (kleine) computer die bedoeld is om allerlei apparatuur/elektronica aan te sturen met behulp van software: knoppen, lampen, sensors, motors, machines, enz. Embedded systemen vind je zowat overal terug: auto's, printers, telefoons, fototoestellen, wasmachines, microgolf ovens, ... Des te "slimmer" apparaten zijn, des te groter de kans dat je er een embedded systeem in zal terugvinden.
 
@@ -31,7 +33,7 @@ Op de achterkant van de micro:bit vind je het volgende:
 - Accelerometer: om te meten aan welke versnelling de micro:bit beweegt/draait. (Een smartphone gebruikt bv. een accelerometer om te bepalen in welke richting je hem vasthoudt.)
 - Bluetooth antenne: om draadloos informatie te verzenden/ontvangen
 
-## Python introductie
+## 2. Python introductie
 
 De micro:bit op zichzelf zal niets doen als er geen programma op staat. Om de micro:bit tot leven te brengen gaan we leren om er programma's voor te schrijven.
 
@@ -41,7 +43,7 @@ Een programma is op zich niets meer dan een lijst van instructies die je aan een
 
 De Python taal is niet zomaar een "speelgoed" programmeertaal die enkel bedoeld is voor de micro:bit. Het is een volwaardige programmeertaal waarmee je o.a. ook programma's kan maken voor je eigen computer. Ze wordt dagdagelijks gebruikt door bedrijven zoals Google, Disney of zelfs door Nasa om bv. de Mars Curiosity rover te testen.
 
-### Mijn eerste programma
+### 2.1. Mijn eerste programma
 
 Om kennis te maken met Python zullen we beginnen met het volgende kleine programma:
 
@@ -74,7 +76,7 @@ Als alles goed is gelukt zal je nu het volgende zien:
 *Extra info over de* ```from microbit import *``` *instructie: Deze instructie duidt aan welk stuk "woordenschat" we nodig hebben in ons programma. Dit is net zoals je de woordenschat van bv. het Nederlands kan opdelen in stukken: basiswoorden, woorden over sport, woorden over wetenschap, enz.
 Sommige woorden kunnen echter in meerdere stukken voorkomen; "golf" heeft bv. meerdere betekenissen: een natuurverschijnsel, een sport, radiogolven, een baai, ... Opdat programma's duidelijk en ondubbelzinnig zijn, moeten we dus eerst expliciet aangeven welke woordenschat nodig is. In dit geval, de "microbit" basiswoordenschat. Hiernaast is er ook bv. woordenschat om muziek te spelen op de microbit, draadloos te communiceren, ...*
 
-### Meerdere instructies
+### 2.2. Meerdere instructies
 
 Ons eerste programma deed eigenlijk maar één ding; ```Hello!``` tonen. In dit voorbeeld gaan we wat meer instructies meegeven:
 
@@ -91,7 +93,7 @@ De instructies van een programma worden in volgorde uitgevoerd: eerst de woorden
 
 
 
-### Waardes onthouden
+### 2.3. Waardes onthouden
 
 Een belangrijk onderdeel van programma's schrijven is dat, tijdens de uitvoering van je programma, je allerlei informatie wil onthouden zodat je ze later in je programma kan gebruiken. Om een eenvoudig voorbeeld te geven:
 
@@ -132,7 +134,7 @@ Iets wat uiteindelijk een waarde zal worden mag ook, bijvoorbeeld een berekening
 fahrenheit= 20 * 9/5 + 32
 ```
 
-### Tekeningen maken
+### 2.4. Tekeningen maken
 
 Tijd om onze kennis in iets leuks om te zetten! Onderstaand programma zal een kleine tekening maken op het micro:bit scherm:
 
@@ -161,7 +163,7 @@ Dus, als je ```display.set_pixel(1,2,3)``` zou ingeven, dan zal je het lampje aa
 
 **Even toetsen!** Na het uitvoeren van het programma wordt een tekening getoond. Welke tekening krijg je te zien? Kan je verklaren waarom de ogen in de tekening veel feller zijn dan de rest?
 
-### Variabelen verhogen
+### 2.5. Variabelen verhogen
 
 Volgend programma laat een "startsignaal" op je micro:bit zien, dat respectievelijk 1,2,3 lampen laat branden, en daarna "Go!" op het scherm toont:
 
@@ -193,7 +195,7 @@ y = y - 2
 y = y - x
 ```
 
-### Herhaling
+### 2.5. Herhaling
 
 In het vorige programma heb je misschien gemerkt dat er eigenlijk drie keer hetzelfde wordt herhaald om het volgende lampje aan te zetten. Meer bepaald, dit stukje is telkens herhaald:
 
@@ -203,23 +205,98 @@ x = x + 1
 sleep(1000)
 ```
 
-Drie keer iets herhalen op deze manier valt nu nog mee, maar je programma zou gigantisch worden als je duizenden keren hetzelfde moet herhalen! 
+Drie keer iets herhalen op deze manier valt nu nog mee, maar je programma zou gigantisch worden als je duizenden keren hetzelfde moet herhalen! Een betere manier om juist hetzelfde resultaat te verkijgen is als volgt:
 
 ~~~python
 from microbit import *
 x = 1
-while (x <= 3):
+while x <= 3:
     display.set_pixel(x,2,9)
     x = x + 1
     sleep(1000)
 display.scroll("Go!")
 ~~~
 
-### Keuzes maken
+Deze versie maakt gebruik van de ```while``` instructie. Hiermee kan je herhaling op een compacte manier neerschrijven. In ons programma staat er ```while x <= 3:```. Dit kan je lezen als: **"Zolang ```x``` ≤ 3, dan moet je de hieropvolgende geïndenteerde instructies blijven herhalen."**
 
-### Alles gecombineerd
+Met "geïndenteerd" wordt bedoeld: "naar rechts geschoven". (Met andere woorden, een instructie is geïndenteerd als er een aantal spaties voor getypt zijn. In ons voorbeeld zijn de instructies op regel 4,5 en 6 allemaal geïndenteerd.)
 
-## Nu is het aan jullie! - oefeningen en ideëen
+Zodra ```x``` niet meer kleiner of gelijk aan 3 is, dan ga je verder met de eerste instructie die niet meer geïndenteerd is. In ons voorbeeld is dat de instructie op regel 7: ```display.scroll("Go!")```.
+
+**Belangrijk!** Er staat "Zolang ```x``` ≤ 3". Ga je dan constant moeten nakijken of ```x``` kleiner of gelijk aan 3 is geworden? Nee. Dit wordt enkel nagekeken telkens nadat de geïdenteerde instructies een keer zijn doorlopen.
+
+**Let op!** In het programma staat er ```<=``` in plaats van het kleiner-of-gelijk-aan (≤) teken. Dit is zo om praktische redenen. Je kan namelijker veel gemakkelijker ```<=``` typen dan ≤. (Er staat dan ook geen ≤ toets op je toetsenbord...)
+
+**Belangrijk!** In onze ```while``` instructie noemt het ```x <= 3``` gedeelte de *conditie*. In het algemeen kan je een ```while``` instructie dus lezen als "Zolang de conditie voldaan is, blijf de hieropvolgende geïndenteerde instructies herhalen."
+
+Er zijn veel mogelijke vormen van condities, en we zullen er nog enkele van gebruiken. Om alvast enkele voorbeelden van condities te geven:
+
+```a > 4``` Is ```a``` groter dan 4?
+
+```b==5``` Is ```b``` gelijk aan 5? (**Let op!** Je moet twee gelijkheidstekens typen!)
+
+```c!=6``` Is ```c``` *niet* gelijk aan 6?
+
+```d>=7 and e == 8``` Is ```d``` ≥  5 **én** ```e``` gelijk aan 8?
+
+```d>=7 or e == 8``` Is ```d``` ≥  5 **of** ```e``` gelijk aan 8?
+
+```button_a.ispressed()``` Is de A-knop van de micro-bit nu ingedrukt?
+
+Zoals je ziet aan deze voorbeelden kan je condities altijd lezen als een ja/nee-vraag.
+
+**Even toetsen!** Wat is de waarde van ```x``` op het einde van dit programma?
+
+```python
+x=2
+while x != 8:
+   x = x + 2
+x = x + 1
+```
+
+### 2.6. Keuzes maken
+
+Tenslotte, de laatste instructie die we gaan bekijken is de ```if``` instructie, die het mogelijk maakt om keuzes te maken in programma's. Bekijk even volgend programma:
+
+```python
+from microbit import *
+
+if button_a.is_pressed():
+    display.show(Image.HAPPY)
+else:
+    display.show(Image.SAD)
+sleep(2000)
+display.show(Image.SURPRISED)
+```
+
+Dit programma kan je als volgt lezen: "**Als** (```if```) de A-knop is ingedrukt, dan moet je ```display.show(Image.HAPPY)``` uitvoeren, en **anders** (```else```) moet je ```display.show(Image.SAD)``` uitvoeren.
+
+De ```if``` instructie heeft, net als de ```while``` instructie een conditie. In het algemeen kan je een ```if``` instructie als volgt lezen: "Als de conditie voldaan is, dan voer je het geïndenteerde gedeelte na ```if``` uit. Als de conditie niet voldaan is, dan voer je het geïndenteerde gedeelte na ```else``` uit."
+
+**Tip!** De ```display.show``` instructie kan je gebruiken om een ingebouwde afbeelding te tonen. [Bekijk volledige lijst met ingebouwde afbeeldingen.](http://microbit-micropython.readthedocs.io/en/latest/tutorials/images.html)
+
+###2.7. Keuzes en herhalingen combineren 
+
+Als je het programma van daarnet zou uit uitvoeren, dan moet je de A-knop direct indrukken wanneer het programma start om een blij gezichtje te krijgen. Als je een fractie van een seconde te laat drukt is de ```if``` instructie al lang uitgevoerd, en krijg je dus een droef gezicht te zien.
+
+Opdat we op eender welk moment op de A-knop kunnen drukken om een blij gezichtje te krijgen zouden we de ```if``` instructie eigenlijk willen herhalen. Dat kan! Bekijk even volgend programma:
+
+```python
+from microbit import *
+while true:
+    if button_a.is_pressed():
+        display.show(Image.HAPPY)
+    else:
+        display.show(Image.SAD)
+```
+
+Hierin steken we de ```if``` instructie, plus alle geïndenteerde instructies die erbij horen, *in* een ```while``` instructie. Hierdoor wordt de ```if``` instructie herhaald.
+
+**Belangrijk!** De ```true``` conditie in onze ```while``` instructie is een speciale conditie die altijd voldaan is. Hierdoor wordt de ```if``` instructie dus eindeloos herhaald!
+
+Geloof het of niet, maar nu we overweg kunnen met variabelen, ```while``` instructies en ```if``` instructies, hebben we eigenlijk al alle basisconcepten om eender welk programma te kunnen schrijven! De volledige Python programmeertaal is natuurlijk veel uitgebreider, maar de meeste concepten die er nog bij komen dienen om gemakkelijk overweg te kunnen met grotere programma's. De meeste programma's in de bedrijfswereld bestaan dan ook uit duizenden, soms wel *miljoenen*, regels aan instructies!
+
+## 3. Nu is het aan jullie! - oefeningen en ideëen
 
 ### Animaties maken (eenvoudig)
 
@@ -239,7 +316,7 @@ Je hebt reeds gezien hoe je tekeningen kan tonen op de micro:bit. Kan je deze ke
 
 ### Mini-tetris (moeilijk)
 
-## Hints!
+## 4. Hints!
 
 ### Animaties maken
 

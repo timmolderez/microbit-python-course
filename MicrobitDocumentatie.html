@@ -511,6 +511,8 @@ pre.line-numbers > code {
 
 <body>
 
+<div style="position: fixed;top: 1em;right: 1em;"><a href="">^^^</a></div>
+
 <h1>Creatief programmeren met Python & micro:bit</h1>
 
 <p>(27/03/&#39;17) - Tim Molderez en Mathijs Saey</p>
@@ -519,39 +521,39 @@ pre.line-numbers > code {
 
 <ul class="toc">
 <li>
-<a href="#toc_0">Micro:bit introductie</a>
+<a href="#toc_0">1. Micro:bit introductie</a>
 </li>
 <li>
-<a href="#toc_1">Python introductie</a>
+<a href="#toc_1">2. Python introductie</a>
 <ul>
 <li>
-<a href="#toc_2">Mijn eerste programma</a>
+<a href="#toc_2">2.1. Mijn eerste programma</a>
 </li>
 <li>
-<a href="#toc_3">Meerdere instructies</a>
+<a href="#toc_3">2.2. Meerdere instructies</a>
 </li>
 <li>
-<a href="#toc_4">Waardes onthouden</a>
+<a href="#toc_4">2.3. Waardes onthouden</a>
 </li>
 <li>
-<a href="#toc_5">Tekeningen maken</a>
+<a href="#toc_5">2.4. Tekeningen maken</a>
 </li>
 <li>
-<a href="#toc_6">Variabelen verhogen</a>
+<a href="#toc_6">2.5. Variabelen verhogen</a>
 </li>
 <li>
-<a href="#toc_7">Herhaling</a>
+<a href="#toc_7">2.5. Herhaling</a>
 </li>
 <li>
-<a href="#toc_8">Keuzes maken</a>
+<a href="#toc_8">2.6. Keuzes maken</a>
 </li>
 <li>
-<a href="#toc_9">Alles gecombineerd</a>
+<a href="#toc_9">2.7. Keuzes en herhalingen combineren</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="#toc_10">Nu is het aan jullie! - oefeningen en ideëen</a>
+<a href="#toc_10">3. Nu is het aan jullie! - oefeningen en ideëen</a>
 <ul>
 <li>
 <a href="#toc_11">Animaties maken (eenvoudig)</a>
@@ -580,7 +582,7 @@ pre.line-numbers > code {
 </ul>
 </li>
 <li>
-<a href="#toc_19">Hints!</a>
+<a href="#toc_19">4. Hints!</a>
 <ul>
 <li>
 <a href="#toc_20">Animaties maken</a>
@@ -590,7 +592,7 @@ pre.line-numbers > code {
 </ul>
 
 
-<h2 id="toc_0">Micro:bit introductie</h2>
+<h2 id="toc_0">1. Micro:bit introductie</h2>
 
 <p>De <a href="http://microbit.org/nl">micro:bit</a> is een <em>embedded systeem</em>, een (kleine) computer die bedoeld is om allerlei apparatuur/elektronica aan te sturen met behulp van software: knoppen, lampen, sensors, motors, machines, enz. Embedded systemen vind je zowat overal terug: auto&#39;s, printers, telefoons, fototoestellen, wasmachines, microgolf ovens, ... Des te &quot;slimmer&quot; apparaten zijn, des te groter de kans dat je er een embedded systeem in zal terugvinden.</p>
 
@@ -615,7 +617,7 @@ pre.line-numbers > code {
 <li>Bluetooth antenne: om draadloos informatie te verzenden/ontvangen</li>
 </ul>
 
-<h2 id="toc_1">Python introductie</h2>
+<h2 id="toc_1">2. Python introductie</h2>
 
 <p>De micro:bit op zichzelf zal niets doen als er geen programma op staat. Om de micro:bit tot leven te brengen gaan we leren om er programma&#39;s voor te schrijven.</p>
 
@@ -625,7 +627,7 @@ pre.line-numbers > code {
 
 <p>De Python taal is niet zomaar een &quot;speelgoed&quot; programmeertaal die enkel bedoeld is voor de micro:bit. Het is een volwaardige programmeertaal waarmee je o.a. ook programma&#39;s kan maken voor je eigen computer. Ze wordt dagdagelijks gebruikt door bedrijven zoals Google, Disney of zelfs door Nasa om bv. de Mars Curiosity rover te testen.</p>
 
-<h3 id="toc_2">Mijn eerste programma</h3>
+<h3 id="toc_2">2.1. Mijn eerste programma</h3>
 
 <p>Om kennis te maken met Python zullen we beginnen met het volgende kleine programma:</p>
 
@@ -656,7 +658,7 @@ display.scroll(&quot;Hello!&quot;)</code></pre></div>
 <p><em>Extra info over de</em> <code>from microbit import *</code> <em>instructie: Deze instructie duidt aan welk stuk &quot;woordenschat&quot; we nodig hebben in ons programma. Dit is net zoals je de woordenschat van bv. het Nederlands kan opdelen in stukken: basiswoorden, woorden over sport, woorden over wetenschap, enz.
 Sommige woorden kunnen echter in meerdere stukken voorkomen; &quot;golf&quot; heeft bv. meerdere betekenissen: een natuurverschijnsel, een sport, radiogolven, een baai, ... Opdat programma&#39;s duidelijk en ondubbelzinnig zijn, moeten we dus eerst expliciet aangeven welke woordenschat nodig is. In dit geval, de &quot;microbit&quot; basiswoordenschat. Hiernaast is er ook bv. woordenschat om muziek te spelen op de microbit, draadloos te communiceren, ...</em></p>
 
-<h3 id="toc_3">Meerdere instructies</h3>
+<h3 id="toc_3">2.2. Meerdere instructies</h3>
 
 <p>Ons eerste programma deed eigenlijk maar één ding; <code>Hello!</code> tonen. In dit voorbeeld gaan we wat meer instructies meegeven:</p>
 
@@ -665,11 +667,11 @@ display.scroll(&quot;Hello!&quot;)
 sleep(3000)
 display.scroll(&quot;Bye :)&quot;)</code></pre></div>
 
+<p><a href="ani/hello-bye.gif">Bekijk de uitvoering van dit programma</a></p>
+
 <p>De instructies van een programma worden in volgorde uitgevoerd: eerst de woordenschat aangeven, dan <code>Hello!</code> tonen, dan de <code>sleep(3000)</code> instructie (waarmee je de micro:bit 3000 milliseconden laat wachten), en tenslotte <code>Bye!</code> tonen.</p>
 
-<p><img src="ani/hello-bye.gif" alt=""></p>
-
-<h3 id="toc_4">Waardes onthouden</h3>
+<h3 id="toc_4">2.3. Waardes onthouden</h3>
 
 <p>Een belangrijk onderdeel van programma&#39;s schrijven is dat, tijdens de uitvoering van je programma, je allerlei informatie wil onthouden zodat je ze later in je programma kan gebruiken. Om een eenvoudig voorbeeld te geven:</p>
 
@@ -681,7 +683,7 @@ sleep(1000)
 display.scroll(&quot;Bye, &quot;)
 display.scroll(firstname)</code></pre></div>
 
-<p><a href="ani/vars.gif">Uitkomst</a></p>
+<p><a href="ani/vars.gif">Bekijk de uitvoering van dit programma</a></p>
 
 <p>Een nieuwe instructie die je hier ziet staan is <code>firstname=&quot;Joske&quot;</code>.</p>
 
@@ -703,7 +705,7 @@ pi=3.14159</code></pre></div>
 
 <div><pre class="line-numbers"><code class="language-python">fahrenheit= 20 * 9/5 + 32</code></pre></div>
 
-<h3 id="toc_5">Tekeningen maken</h3>
+<h3 id="toc_5">2.4. Tekeningen maken</h3>
 
 <p>Tijd om onze kennis in iets leuks om te zetten! Onderstaand programma zal een kleine tekening maken op het micro:bit scherm:</p>
 
@@ -730,11 +732,11 @@ display.set_pixel(4,3,h)</code></pre></div>
 
 <p>Dus, als je <code>display.set_pixel(1,2,3)</code> zou ingeven, dan zal je het lampje aanzetten op kolom 1, rij 2, met helderheid 3.</p>
 
-<p><strong>Even toetsen!</strong> Na het uitvoeren van het programma wordt een tekening getoond. Kan je verklaren waarom de ogen in de tekening veel feller zijn dan de rest?</p>
+<p><strong>Even toetsen!</strong> Na het uitvoeren van het programma wordt een tekening getoond. Welke tekening krijg je te zien? Kan je verklaren waarom de ogen in de tekening veel feller zijn dan de rest?</p>
 
-<h3 id="toc_6">Variabelen verhogen</h3>
+<h3 id="toc_6">2.5. Variabelen verhogen</h3>
 
-<p>Volgend programma laat een &quot;aftelsignaal&quot; op je micro:bit zien, dat respectievelijk 1,2,3 lampen laat branden, en daarna &quot;Go!&quot; op het scherm toont:</p>
+<p>Volgend programma laat een &quot;startsignaal&quot; op je micro:bit zien, dat respectievelijk 1,2,3 lampen laat branden, en daarna &quot;Go!&quot; op het scherm toont:</p>
 
 <div><pre class="line-numbers"><code class="language-python">from microbit import *
 x = 1
@@ -748,6 +750,8 @@ display.set_pixel(x,2,9)
 x = x + 1
 sleep(1000)
 display.scroll(&quot;Go!&quot;)</code></pre></div>
+
+<p><a href="ani/go.gif">Bekijk de uitvoering van dit programma</a></p>
 
 <p>Het enige speciale in dit programma zijn de <code>x = x + 1</code> instructies. Deze kan je lezen als &quot;Variabele <code>x</code> is vanaf nu gelijk aan: de <em>oude</em> waarde van <code>x</code> plus 1.&quot; Of korter gezegd: &quot;Verhoog <code>x</code> de waarde van <code>x</code> met 1.&quot;</p>
 
@@ -758,21 +762,98 @@ x = 4
 y = y - 2
 y = y - x</code></pre></div>
 
-<h3 id="toc_7">Herhaling</h3>
+<h3 id="toc_7">2.5. Herhaling</h3>
+
+<p>In het vorige programma heb je misschien gemerkt dat er eigenlijk drie keer hetzelfde wordt herhaald om het volgende lampje aan te zetten. Meer bepaald, dit stukje is telkens herhaald:</p>
+
+<div><pre class="line-numbers"><code class="language-python">display.set_pixel(x,2,9)
+x = x + 1
+sleep(1000)</code></pre></div>
+
+<p>Drie keer iets herhalen op deze manier valt nu nog mee, maar je programma zou gigantisch worden als je duizenden keren hetzelfde moet herhalen! Een betere manier om juist hetzelfde resultaat te verkijgen is als volgt:</p>
 
 <div><pre class="line-numbers"><code class="language-python">from microbit import *
 x = 1
-while (x &lt;= 3):
+while x &lt;= 3:
     display.set_pixel(x,2,9)
     x = x + 1
     sleep(1000)
 display.scroll(&quot;Go!&quot;)</code></pre></div>
 
-<h3 id="toc_8">Keuzes maken</h3>
+<p>Deze versie maakt gebruik van de <code>while</code> instructie. Hiermee kan je herhaling op een compacte manier neerschrijven. In ons programma staat er <code>while x &lt;= 3:</code>. Dit kan je lezen als: <strong>&quot;Zolang <code>x</code> ≤ 3, dan moet je de hieropvolgende geïndenteerde instructies blijven herhalen.&quot;</strong></p>
 
-<h3 id="toc_9">Alles gecombineerd</h3>
+<p>Met &quot;geïndenteerd&quot; wordt bedoeld: &quot;naar rechts geschoven&quot;. (Met andere woorden, een instructie is geïndenteerd als er een aantal spaties voor getypt zijn. In ons voorbeeld zijn de instructies op regel 4,5 en 6 allemaal geïndenteerd.)</p>
 
-<h2 id="toc_10">Nu is het aan jullie! - oefeningen en ideëen</h2>
+<p>Zodra <code>x</code> niet meer kleiner of gelijk aan 3 is, dan ga je verder met de eerste instructie die niet meer geïndenteerd is. In ons voorbeeld is dat de instructie op regel 7: <code>display.scroll(&quot;Go!&quot;)</code>.</p>
+
+<p><strong>Belangrijk!</strong> Er staat &quot;Zolang <code>x</code> ≤ 3&quot;. Ga je dan constant moeten nakijken of <code>x</code> kleiner of gelijk aan 3 is geworden? Nee. Dit wordt enkel nagekeken telkens nadat de geïdenteerde instructies een keer zijn doorlopen.</p>
+
+<p><strong>Let op!</strong> In het programma staat er <code>&lt;=</code> in plaats van het kleiner-of-gelijk-aan (≤) teken. Dit is zo om praktische redenen. Je kan namelijker veel gemakkelijker <code>&lt;=</code> typen dan ≤. (Er staat dan ook geen ≤ toets op je toetsenbord...)</p>
+
+<p><strong>Belangrijk!</strong> In onze <code>while</code> instructie noemt het <code>x &lt;= 3</code> gedeelte de <em>conditie</em>. In het algemeen kan je een <code>while</code> instructie dus lezen als &quot;Zolang de conditie voldaan is, blijf de hieropvolgende geïndenteerde instructies herhalen.&quot;</p>
+
+<p>Er zijn veel mogelijke vormen van condities, en we zullen er nog enkele van gebruiken. Om alvast enkele voorbeelden van condities te geven:</p>
+
+<p><code>a &gt; 4</code> Is <code>a</code> groter dan 4?</p>
+
+<p><code>b==5</code> Is <code>b</code> gelijk aan 5? (<strong>Let op!</strong> Je moet twee gelijkheidstekens typen!)</p>
+
+<p><code>c!=6</code> Is <code>c</code> <em>niet</em> gelijk aan 6?</p>
+
+<p><code>d&gt;=7 and e == 8</code> Is <code>d</code> ≥  5 <strong>én</strong> <code>e</code> gelijk aan 8?</p>
+
+<p><code>d&gt;=7 or e == 8</code> Is <code>d</code> ≥  5 <strong>of</strong> <code>e</code> gelijk aan 8?</p>
+
+<p><code>button_a.ispressed()</code> Is de A-knop van de micro-bit nu ingedrukt?</p>
+
+<p>Zoals je ziet aan deze voorbeelden kan je condities altijd lezen als een ja/nee-vraag.</p>
+
+<p><strong>Even toetsen!</strong> Wat is de waarde van <code>x</code> op het einde van dit programma?</p>
+
+<div><pre class="line-numbers"><code class="language-python">x=2
+while x != 8:
+   x = x + 2
+x = x + 1</code></pre></div>
+
+<h3 id="toc_8">2.6. Keuzes maken</h3>
+
+<p>Tenslotte, de laatste instructie die we gaan bekijken is de <code>if</code> instructie, die het mogelijk maakt om keuzes te maken in programma&#39;s. Bekijk even volgend programma:</p>
+
+<div><pre class="line-numbers"><code class="language-python">from microbit import *
+
+if button_a.is_pressed():
+    display.show(Image.HAPPY)
+else:
+    display.show(Image.SAD)
+sleep(2000)
+display.show(Image.SURPRISED)</code></pre></div>
+
+<p>Dit programma kan je als volgt lezen: &quot;<strong>Als</strong> (<code>if</code>) de A-knop is ingedrukt, dan moet je <code>display.show(Image.HAPPY)</code> uitvoeren, en <strong>anders</strong> (<code>else</code>) moet je <code>display.show(Image.SAD)</code> uitvoeren.</p>
+
+<p>De <code>if</code> instructie heeft, net als de <code>while</code> instructie een conditie. In het algemeen kan je een <code>if</code> instructie als volgt lezen: &quot;Als de conditie voldaan is, dan voer je het geïndenteerde gedeelte na <code>if</code> uit. Als de conditie niet voldaan is, dan voer je het geïndenteerde gedeelte na <code>else</code> uit.&quot;</p>
+
+<p><strong>Tip!</strong> De <code>display.show</code> instructie kan je gebruiken om een ingebouwde afbeelding te tonen. <a href="http://microbit-micropython.readthedocs.io/en/latest/tutorials/images.html">Bekijk volledige lijst met ingebouwde afbeeldingen.</a></p>
+
+<h3 id="toc_9">2.7. Keuzes en herhalingen combineren</h3>
+
+<p>Als je het programma van daarnet zou uit uitvoeren, dan moet je de A-knop direct indrukken wanneer het programma start om een blij gezichtje te krijgen. Als je een fractie van een seconde te laat drukt is de <code>if</code> instructie al lang uitgevoerd, en krijg je dus een droef gezicht te zien.</p>
+
+<p>Opdat we op eender welk moment op de A-knop kunnen drukken om een blij gezichtje te krijgen zouden we de <code>if</code> instructie eigenlijk willen herhalen. Dat kan! Bekijk even volgend programma:</p>
+
+<div><pre class="line-numbers"><code class="language-python">from microbit import *
+while true:
+    if button_a.is_pressed():
+        display.show(Image.HAPPY)
+    else:
+        display.show(Image.SAD)</code></pre></div>
+
+<p>Hierin steken we de <code>if</code> instructie, plus alle geïndenteerde instructies die erbij horen, <em>in</em> een <code>while</code> instructie. Hierdoor wordt de <code>if</code> instructie herhaald.</p>
+
+<p><strong>Belangrijk!</strong> De <code>true</code> conditie in onze <code>while</code> instructie is een speciale conditie die altijd voldaan is. Hierdoor wordt de <code>if</code> instructie dus eindeloos herhaald!</p>
+
+<p>Geloof het of niet, maar nu we overweg kunnen met variabelen, <code>while</code> instructies en <code>if</code> instructies, hebben we eigenlijk al alle basisconcepten om eender welk programma te kunnen schrijven! De volledige Python programmeertaal is natuurlijk veel uitgebreider, maar de meeste concepten die er nog bij komen dienen om gemakkelijk overweg te kunnen met grotere programma&#39;s. De meeste programma&#39;s in de bedrijfswereld bestaan dan ook uit duizenden, soms wel <em>miljoenen</em>, regels aan instructies!</p>
+
+<h2 id="toc_10">3. Nu is het aan jullie! - oefeningen en ideëen</h2>
 
 <h3 id="toc_11">Animaties maken (eenvoudig)</h3>
 
@@ -792,7 +873,7 @@ display.scroll(&quot;Go!&quot;)</code></pre></div>
 
 <h3 id="toc_18">Mini-tetris (moeilijk)</h3>
 
-<h2 id="toc_19">Hints!</h2>
+<h2 id="toc_19">4. Hints!</h2>
 
 <h3 id="toc_20">Animaties maken</h3>
 
