@@ -300,13 +300,72 @@ Geloof het of niet, maar nu we overweg kunnen met variabelen, ```while``` instru
 
 ### Animaties maken (eenvoudig)
 
-Je hebt reeds gezien hoe je tekeningen kan tonen op de micro:bit. Kan je deze kennis ook gebruiken om animaties te tonen die zich eindeloos herhalen? (om wat inspiratie te geven: een smiley die knipoogt, een wandelend stokventje, een kloppend hart, een analoge klok, een continu bewegende pijl, ...)
+Je hebt reeds gezien hoe je tekeningen kan tonen op de micro:bit. Kan je deze kennis ook gebruiken om animaties te tonen die zich eindeloos herhalen? (om wat inspiratie te geven: vuurwerk, een wandelend stokventje, een kloppend hart, een analoge klok, ...)
+
+![](ani/animation.gif)
 
 ### Muziek maken (eenvoudig)
+
+*Deze oefening is redelijk eenvoudig, mits je noten kan lezen. Zoniet zal je het tijdens deze oefening leren :)*
+
+Op de micro:bit zelf zit geen luidspreker, maar met de aansluitingen onderaan kunnen we bv. wel oortjes aansluiten om muziek af te spelen. Dit kan je als volgt doen:
+
+![](img/headphone.png)
+![](img/jack.png)
+
+Probeer alvast volgend programma uit om te testen of de oortjes goed zijn aangesloten:
+
+```python
+import music
+music.play(music.NYAN)
+```
+
+Dit zal één van de ingebouwde deuntjes afspelen :) Alles goed gelukt? Dan kunnen we nu zelf onze eigen muziek schrijven! Bekijk even volgend programma dat de noten van Broeder Jacob afspeelt:
+
+```python
+import music
+tune = ["C", "D", "E", "C", "C", "D", "E", "C", "E", "F", "G", "E", "F", "G"]
+music.play(tune)
+```
+
+Wat hier nieuw is, is dat een variabele ook een lijst van waardes mag zijn. Dit is hier het geval voor de ```tune``` variabele, die een lijst van muzieknoten voorstelt.
+
+De noten in dit programma noemen niet do, re, mi, enz. ; in het Engels gebruiken  ze namelijk letters om noten aan te duiden: C (do), D (re), E (mi), F (fa), G (sol), A (la), B (si)
+
+In plaats van Broeder Jacob, kan je nu de micro:bit een ander deuntje laten afspelen? (Je kan de partituren van zowat eender wat vinden op Google Afbeeldingen door "piano tabs" achter je zoekterm te zetten!)
+
+Om je te helpen bij het omzetten van de partituur naar de juiste namen van elke noot:
+
+![](img/piano-notes.jpg)
+
+**Extra!** Je zal wellicht gehoord hebben dat Broeder Jacob niet helemaal juist klonk; dit was zo omdat elke noot nu even lang werd afgespeeld. Er is ook een iets meer geavanceerde notatie waarin je kan aangeven hoe lang elke noot moet duren: 
+
+```python
+import music
+tune = ["C4:4", "D4:4", "E4:4", "C4:4", "C4:4", "D4:4", "E4:4", "C4:4",
+        "E4:4", "F4:4", "G4:8", "E4:4", "F4:4", "G4:8"]
+music.play(tune)
+```
+
+In deze versie is de laatste noot aangegeven als "G4:8". Dit kan je lezen als "Druk op de vierde G(sol)-toets van een pianoklavier, voor 8 tellen lang."
+
 
 ### Keep it steady! - multiplayer spel (gemiddeld)
 
 ### Het noorden kwijt? (gemiddeld)
+
+In deze oefening gaan we het kompas in de micro:bit gebruiken om ons het noorden te kunnen tonen. Begin je programma sowieso met volgende instructies:
+
+```python
+from microbit import *
+if not compass.is_calibrated():
+    compass.calibrate()
+```
+
+De tweede en derde instructies zorgen ervoor dat, mocht het kompas van de micro:bit niet gekalibreerd zijn, dan wordt de kalibratie eerst uitgevoerd.
+
+Om het programma verder af te maken heb je nog het volgende nodig:
+- ```compass.heading()``` geeft je de huidige waarde van het kompas als een getal tussen 0 en 360.
 
 ### Dobbelstenen maken (gemiddeld)
 
@@ -314,11 +373,18 @@ Je hebt reeds gezien hoe je tekeningen kan tonen op de micro:bit. Kan je deze ke
 
 ### Bop it (moeilijk)
 
-### Mini-tetris (moeilijk)
+### Mini-tetris (keimoeilijk)
+
+Kan je een tetris spel maken waar de blokjes altijd 1x1 groot zijn? (Grotere blokjes zijn niet echt praktisch op zo'n klein scherm :) )
 
 ## 4. Hints!
 
 ### Animaties maken
 
 - Een animatie is niets meer dan een aantal verschillende tekeningen die snel na elkaar getoond worden.
+- Met de ```display.clear()``` instructie kan je je scherm in één keer wissen.
 - Je kan ```sleep``` gebruiken om even te wachten nadat een tekening getoond is.
+
+### Muziek maken
+
+- (Geen hints)
