@@ -365,7 +365,7 @@ if not compass.is_calibrated():
 De tweede en derde instructies zorgen ervoor dat, mocht het kompas van de micro:bit niet gekalibreerd zijn, dan wordt de kalibratie eerst uitgevoerd.
 
 Om het programma verder af te maken heb je nog het volgende nodig:
-- ```compass.heading()``` geeft je de huidige waarde van het kompas als een getal tussen 0 en 360.
+- ```compass.heading()``` geeft je de huidige waarde van het kompas als een getal tussen 0 en 360. Als de waarde 0 is, wijst de micro:bit nu naar het noorden. 
 
 ### Dobbelstenen maken (gemiddeld)
 
