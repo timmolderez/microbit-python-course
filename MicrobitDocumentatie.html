@@ -511,7 +511,9 @@ pre.line-numbers > code {
 
 <body>
 
-<div style="position: fixed;top: 1em;right: 1em;"><a href="">^^^</a></div>
+<div style="position: fixed;top: 1em;right: 1em">
+  <a href="" style="text-decoration:none"><b>^^^</b></a>
+</div>
 
 <h1>Creatief programmeren met Python & micro:bit</h1>
 
@@ -559,33 +561,25 @@ pre.line-numbers > code {
 <a href="#toc_11">Animaties maken (eenvoudig)</a>
 </li>
 <li>
-<a href="#toc_12">Muziek maken (eenvoudig)</a>
+<a href="#toc_12">Bibberspel (eenvoudig)</a>
 </li>
 <li>
-<a href="#toc_13">Keep it steady! - multiplayer spel (gemiddeld)</a>
+<a href="#toc_13">Muziek maken (eenvoudig)</a>
 </li>
 <li>
-<a href="#toc_14">Het noorden kwijt? (gemiddeld)</a>
+<a href="#toc_14">Balansspel, voor meerdere spelers (gemiddeld)</a>
 </li>
 <li>
-<a href="#toc_15">Dobbelstenen maken (gemiddeld)</a>
+<a href="#toc_15">Het noorden kwijt? (gemiddeld)</a>
 </li>
 <li>
-<a href="#toc_16">Simon - geheugenspel (moeilijk)</a>
+<a href="#toc_16">Dobbelstenen maken (gemiddeld)</a>
 </li>
 <li>
-<a href="#toc_17">Bop it (moeilijk)</a>
+<a href="#toc_17">Simon - geheugenspel (moeilijk)</a>
 </li>
 <li>
 <a href="#toc_18">Mini-tetris (moeilijk)</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="#toc_19">4. Hints!</a>
-<ul>
-<li>
-<a href="#toc_20">Animaties maken</a>
 </li>
 </ul>
 </li>
@@ -598,10 +592,13 @@ pre.line-numbers > code {
 
 <p><img src="img/microbit-front.png" alt=""></p>
 
-<p>Om even een korte rondleiding te geven van de micro:bit zelf; op de voorkant vind je het volgende terug:
-- 5 x 5 LED lampjes
-- 2 knoppen (gelabeld A en B)
-- Onderaan: aansluitingen voor extra elektronica (sensors, luidsprekers, motors, ..)</p>
+<p>Om even een korte rondleiding te geven van de micro:bit zelf; op de voorkant vind je het volgende terug:</p>
+
+<ul>
+<li>5 x 5 LED lampjes</li>
+<li>2 knoppen (gelabeld A en B)</li>
+<li>Onderaan: aansluitingen voor extra elektronica (sensors, luidsprekers, motors, ..)</li>
+</ul>
 
 <p><img src="img/microbit-back.png" alt=""></p>
 
@@ -621,7 +618,7 @@ pre.line-numbers > code {
 
 <p>De micro:bit op zichzelf zal niets doen als er geen programma op staat. Om de micro:bit tot leven te brengen gaan we leren om er programma&#39;s voor te schrijven.</p>
 
-<p>Een programma is op zich niets meer dan een lijst van instructies die je aan een computer geeft om uit te voeren. Als je mensen kan rond bevelen kan je dus ook programmeren :) Net zoals bij mensen, kan je best duidelijke instructies geven in een taal die de computer begrijpt. De programmeertaal die we voor de micro:bit gaan gebruiken noemt <a href="https://www.python.org">Python</a>.</p>
+<p>Een programma is op zich niets meer dan een lijst van instructies die je aan een computer geeft om uit te voeren. Als je mensen kan rond bevelen kan je dus ook programmeren :) Net zoals bij mensen, kan je best duidelijke instructies geven  aan je computer, in een taal die de computer begrijpt. De programmeertaal die we voor de micro:bit gaan gebruiken noemt <a href="https://www.python.org">Python</a>.</p>
 
 <p><img src="img/python-logo.png" alt=""></p>
 
@@ -857,29 +854,143 @@ while true:
 
 <h3 id="toc_11">Animaties maken (eenvoudig)</h3>
 
-<p>Je hebt reeds gezien hoe je tekeningen kan tonen op de micro:bit. Kan je deze kennis ook gebruiken om animaties te tonen die zich eindeloos herhalen? (om wat inspiratie te geven: een smiley die knipoogt, een wandelend stokventje, een kloppend hart, een analoge klok, een continu bewegende pijl, ...)</p>
+<p>Je hebt reeds gezien hoe je tekeningen kan tonen op de micro:bit. Kan je deze kennis ook gebruiken om animaties te tonen die zich eindeloos herhalen? (om wat inspiratie te geven: vuurwerk, een wandelend stokventje, een kloppend hart, een analoge klok, ...)</p>
 
-<h3 id="toc_12">Muziek maken (eenvoudig)</h3>
+<p><img src="ani/animation.gif" alt=""></p>
 
-<h3 id="toc_13">Keep it steady! - multiplayer spel (gemiddeld)</h3>
-
-<h3 id="toc_14">Het noorden kwijt? (gemiddeld)</h3>
-
-<h3 id="toc_15">Dobbelstenen maken (gemiddeld)</h3>
-
-<h3 id="toc_16">Simon - geheugenspel (moeilijk)</h3>
-
-<h3 id="toc_17">Bop it (moeilijk)</h3>
-
-<h3 id="toc_18">Mini-tetris (moeilijk)</h3>
-
-<h2 id="toc_19">4. Hints!</h2>
-
-<h3 id="toc_20">Animaties maken</h3>
+<p><strong>Hints!</strong></p>
 
 <ul>
 <li>Een animatie is niets meer dan een aantal verschillende tekeningen die snel na elkaar getoond worden.</li>
+<li>Met de <code>display.clear()</code> instructie kan je je scherm in één keer wissen.</li>
 <li>Je kan <code>sleep</code> gebruiken om even te wachten nadat een tekening getoond is.</li>
+</ul>
+
+<h3 id="toc_12">Bibberspel (eenvoudig)</h3>
+
+<p>Doel van het &quot;bibberspel&quot; is dat je, zoals je kan zien op de foto hieronder, een lus over een gekronkelde draad kan bewegen, zonder de draad aan te raken.</p>
+
+<p><img src="img/steady-hands-mbit.jpg" alt=""></p>
+
+<p>Eerst zullen we ons parcours maken :</p>
+
+<ol>
+<li>Knip een klein stuk karton uit.</li>
+<li>Knip een stuk draad af met een kniptang.</li>
+<li>Prik twee kleine gaten in het karton, met bv. een schaar.</li>
+<li>Steek elk uiteinde van de draad in een gat, en plak het aan de onderkant van het karton vast met wat plakband.</li>
+<li>Maak kronkels in je draad om het parcours zo makkelijk of moeilijk te maken als je wil.</li>
+<li>Verbind het parcours a.d.h.v. krokodillenklemmen met de GND (aarding) aansluiting op je micro-bit.</li>
+<li>Knip nog een klein stukje draad.</li>
+<li>Maak er een lus van.</li>
+<li>Verbind de lus met je microbit op de 0 aansluiting.</li>
+</ol>
+
+<p><strong>Hints!</strong></p>
+
+<ul>
+<li>Er zal enkel stroom door het parcours lopen als de lus ermee verbonden is. Met andere woorden, in dat geval heb je het spel verloren. </li>
+<li>Je kan nagaan of er stroom zit op aansluiting 0 met volgende conditie <code>pin0.is_touched()</code>.</li>
+<li>Om te testen of een conditie <em>niet</em> waar is, typ je er <code>not</code> voor.</li>
+</ul>
+
+<h3 id="toc_13">Muziek maken (eenvoudig)</h3>
+
+<p>Op de micro:bit zelf zit geen luidspreker, maar met de aansluitingen onderaan kunnen we bv. wel oortjes aansluiten om muziek af te spelen. Dit kan je doen met krokodillenklemmen, zoals aangegeven op de foto&#39;s hieronder:</p>
+
+<p><img src="img/headphone.png" alt="">
+<img src="img/jack.png" alt=""></p>
+
+<p>Probeer alvast volgend programma uit om te testen of de oortjes goed zijn aangesloten:</p>
+
+<div><pre class="line-numbers"><code class="language-python">import music
+music.play(music.NYAN)</code></pre></div>
+
+<p>Dit zal één van de ingebouwde deuntjes afspelen :) Alles goed gelukt? Dan kunnen we nu zelf onze eigen muziek schrijven! Bekijk even volgend programma dat de noten van Broeder Jacob afspeelt:</p>
+
+<div><pre class="line-numbers"><code class="language-python">import music
+tune = [&quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;C&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;C&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;]
+music.play(tune)</code></pre></div>
+
+<p>Wat hier nieuw is, is dat een variabele ook een lijst van waardes mag zijn. Dit is hier het geval voor de <code>tune</code> variabele, die een lijst van muzieknoten voorstelt.</p>
+
+<p>De noten in dit programma noemen niet do, re, mi, enz. ; in het Engels worden namelijk letters gebruikt om de verschillende noten aan te duiden: C (do), D (re), E (mi), F (fa), G (sol), A (la), B (si)</p>
+
+<p>In plaats van Broeder Jacob, kan je nu de micro:bit een ander deuntje laten afspelen? (Je kan de partituren van zowat eender wat vinden op Google Afbeeldingen door &quot;piano tabs&quot; achter je zoekterm te zetten!)</p>
+
+<p>Om je te helpen bij het omzetten van de partituur naar de juiste namen van elke noot:</p>
+
+<p><img src="img/piano-notes.jpg" alt=""></p>
+
+<p><strong>Extra!</strong> Je zal wellicht gehoord hebben dat Broeder Jacob niet helemaal juist klonk; dit was zo omdat elke noot nu even lang werd afgespeeld. Er is ook een iets meer geavanceerde notatie waarin je kan aangeven hoe lang elke noot moet duren: </p>
+
+<div><pre class="line-numbers"><code class="language-python">import music
+tune = [&quot;C4:4&quot;, &quot;D4:4&quot;, &quot;E4:4&quot;, &quot;C4:4&quot;, &quot;C4:4&quot;, &quot;D4:4&quot;, &quot;E4:4&quot;, &quot;C4:4&quot;,
+        &quot;E4:4&quot;, &quot;F4:4&quot;, &quot;G4:8&quot;, &quot;E4:4&quot;, &quot;F4:4&quot;, &quot;G4:8&quot;]
+music.play(tune)</code></pre></div>
+
+<p>In deze versie is de laatste noot aangegeven als &quot;G4:8&quot;. Dit kan je lezen als &quot;Druk op de vierde G(sol)-toets van een pianoklavier, voor 8 tellen lang.&quot;</p>
+
+<h3 id="toc_14">Balansspel, voor meerdere spelers (gemiddeld)</h3>
+
+<p>Het doel van dit contactspel is eenvoudig: iedereen heeft een micro:bit in z&#39;n hand vast en wandelt rond. Je moet je eigen micro:bit steeds zo horizontaal mogelijk houden, maar om te winnen moet je de micro:bits van je tegenstanders uit balans halen. Als je micro:bit uit balans is val je uit het spel. Je kan bv. ee afbeelding tonen op je micro:bit zodra je uit balans bent.</p>
+
+<p><strong>Hints!</strong></p>
+
+<ul>
+<li>Om de balans van de micro:bit te meten kunnen we van de accelerometer gebruik maken. De waarde <code>accelerometer.get_x()</code> geeft een getal tussen -1024 en 1024 terug om aan te geven in hoeverre de micro:bit naar links/rechts is gedraaid. Als dit getal dus rond de 0 schommelt is de micro:bit in balans (, althans wat rotatie rond de X-as betreft). Analoog hieraan duidt <code>accelerometer.get_y()</code> aan hoever de micro:bit naar voor/achter is gedraaid, ook met een waarde tussen -1024 en 1024.</li>
+<li>Om rond te kunnen wandelen met de micro:bit moet je deze met de batterij aansluiten.</li>
+</ul>
+
+<h3 id="toc_15">Het noorden kwijt? (gemiddeld)</h3>
+
+<p>In deze oefening gaan we het kompas in de micro:bit gebruiken om ons het noorden te kunnen tonen. Begin je programma sowieso met volgende instructies:</p>
+
+<div><pre class="line-numbers"><code class="language-python">from microbit import *
+if not compass.is_calibrated():
+    compass.calibrate()</code></pre></div>
+
+<p>De tweede en derde instructies zorgen ervoor dat, mocht het kompas van de micro:bit niet gekalibreerd zijn, dan wordt de kalibratie eerst uitgevoerd.</p>
+
+<p>Om het programma verder af te maken heb je nog het volgende nodig:</p>
+
+<ul>
+<li><code>compass.heading()</code> geeft je de huidige waarde van het kompas als een getal tussen 0 en 360. Als de waarde 0 is, wijst de micro:bit nu naar het noorden.</li>
+<li>Er zijn verschillende ingebouwde afbeeldingen beschikbaar van pijlen die naar verschillende richtingen wijzen. Deze kan je gebruiken om het noorden (ongeveer) aan te geven.</li>
+</ul>
+
+<h3 id="toc_16">Dobbelstenen maken (gemiddeld)</h3>
+
+<p>In deze oefeningen maken we van de micro:bit een dobbelsteen: telkens je schudt met de micro:bit, zal er een willekeurig getal op het scherm getoond worden.</p>
+
+<p><strong>Hints!</strong> </p>
+
+<ul>
+<li>Om te bepalen of er met de micro:bit is geschud kan je volgende conditie gebruiken: <code>accelerometer.was_gesture(&quot;shake&quot;)</code></li>
+<li>Om een willekeurig getal te verkrijgen gebruik je deze waarde: <code>random.randint(1, 6)</code></li>
+<li>Vergeet ook niet om bovenaan om <code>import random</code> te gebruiken.</li>
+</ul>
+
+<h3 id="toc_17">Simon - geheugenspel (moeilijk)</h3>
+
+<p>Bedoeling van het &quot;Simon&quot; geheugenspel is om een reeks van patronen te tonen, waarna iemand deze reeks moet herhalen. In ons geval zullen we een reeks pijlen tonen, om aan te duiden in welke richting de micro:bit.</p>
+
+<p><strong>Hints!</strong></p>
+
+<ul>
+<li>Dit is de lijst van mogelijke richtingen waarop je de micro:bit kan draaien.</li>
+<li><code>gestures = [&quot;up&quot;, &quot;down&quot;, &quot;left&quot;, &quot;right&quot;]</code></li>
+<li>Je kan een willekeurige waarde kiezen uit een gegeven lijst. Dit is vanwege <code>random.choice(gestures_simple).</code></li>
+</ul>
+
+<h3 id="toc_18">Mini-tetris (moeilijk)</h3>
+
+<p>Kan je een tetris spel maken waar de blokjes altijd 1x1 groot zijn? (Grotere blokjes zijn niet echt praktisch op zo&#39;n klein scherm :) )</p>
+
+<p><strong>Hints!</strong></p>
+
+<ul>
+<li>Dit geeft een getal om de helderheid van een lamp te verkrijgen: <code>microbit.display.get_pixel(x, y)</code></li>
 </ul>
 
 

@@ -17,6 +17,7 @@ De [micro:bit](http://microbit.org/nl) is een *embedded systeem*, een (kleine) c
 ![](img/microbit-front.png)
 
 Om even een korte rondleiding te geven van de micro:bit zelf; op de voorkant vind je het volgende terug:
+
 - 5 x 5 LED lampjes
 - 2 knoppen (gelabeld A en B)
 - Onderaan: aansluitingen voor extra elektronica (sensors, luidsprekers, motors, ..)
@@ -37,7 +38,7 @@ Op de achterkant van de micro:bit vind je het volgende:
 
 De micro:bit op zichzelf zal niets doen als er geen programma op staat. Om de micro:bit tot leven te brengen gaan we leren om er programma's voor te schrijven.
 
-Een programma is op zich niets meer dan een lijst van instructies die je aan een computer geeft om uit te voeren. Als je mensen kan rond bevelen kan je dus ook programmeren :) Net zoals bij mensen, kan je best duidelijke instructies geven in een taal die de computer begrijpt. De programmeertaal die we voor de micro:bit gaan gebruiken noemt [Python](https://www.python.org).
+Een programma is op zich niets meer dan een lijst van instructies die je aan een computer geeft om uit te voeren. Als je mensen kan rond bevelen kan je dus ook programmeren :) Net zoals bij mensen, kan je best duidelijke instructies geven  aan je computer, in een taal die de computer begrijpt. De programmeertaal die we voor de micro:bit gaan gebruiken noemt [Python](https://www.python.org).
 
 ![](img/python-logo.png)
 
@@ -304,11 +305,39 @@ Je hebt reeds gezien hoe je tekeningen kan tonen op de micro:bit. Kan je deze ke
 
 ![](ani/animation.gif)
 
+**Hints!**
+
+- Een animatie is niets meer dan een aantal verschillende tekeningen die snel na elkaar getoond worden.
+- Met de ```display.clear()``` instructie kan je je scherm in één keer wissen.
+- Je kan ```sleep``` gebruiken om even te wachten nadat een tekening getoond is.
+
+### Bibberspel (eenvoudig)
+
+Doel van het "bibberspel" is dat je, zoals je kan zien op de foto hieronder, een lus over een gekronkelde draad kan bewegen, zonder de draad aan te raken.
+
+![](img/steady-hands-mbit.jpg)
+
+Eerst zullen we ons parcours maken :
+
+1. Knip een klein stuk karton uit.
+2. Knip een stuk draad af met een kniptang.
+3. Prik twee kleine gaten in het karton, met bv. een schaar.
+4. Steek elk uiteinde van de draad in een gat, en plak het aan de onderkant van het karton vast met wat plakband.
+5. Maak kronkels in je draad om het parcours zo makkelijk of moeilijk te maken als je wil.
+6. Verbind het parcours a.d.h.v. krokodillenklemmen met de GND (aarding) aansluiting op je micro-bit.
+7. Knip nog een klein stukje draad.
+8. Maak er een lus van.
+9. Verbind de lus met je microbit op de 0 aansluiting.
+
+**Hints!**
+
+- Er zal enkel stroom door het parcours lopen als de lus ermee verbonden is. Met andere woorden, in dat geval heb je het spel verloren. 
+- Je kan nagaan of er stroom zit op aansluiting 0 met volgende conditie ```pin0.is_touched()```.
+- Om te testen of een conditie *niet* waar is, typ je er ```not``` voor.
+
 ### Muziek maken (eenvoudig)
 
-*Deze oefening is redelijk eenvoudig, mits je noten kan lezen. Zoniet zal je het tijdens deze oefening leren :)*
-
-Op de micro:bit zelf zit geen luidspreker, maar met de aansluitingen onderaan kunnen we bv. wel oortjes aansluiten om muziek af te spelen. Dit kan je als volgt doen:
+Op de micro:bit zelf zit geen luidspreker, maar met de aansluitingen onderaan kunnen we bv. wel oortjes aansluiten om muziek af te spelen. Dit kan je doen met krokodillenklemmen, zoals aangegeven op de foto's hieronder:
 
 ![](img/headphone.png)
 ![](img/jack.png)
@@ -330,7 +359,7 @@ music.play(tune)
 
 Wat hier nieuw is, is dat een variabele ook een lijst van waardes mag zijn. Dit is hier het geval voor de ```tune``` variabele, die een lijst van muzieknoten voorstelt.
 
-De noten in dit programma noemen niet do, re, mi, enz. ; in het Engels gebruiken  ze namelijk letters om noten aan te duiden: C (do), D (re), E (mi), F (fa), G (sol), A (la), B (si)
+De noten in dit programma noemen niet do, re, mi, enz. ; in het Engels worden namelijk letters gebruikt om de verschillende noten aan te duiden: C (do), D (re), E (mi), F (fa), G (sol), A (la), B (si)
 
 In plaats van Broeder Jacob, kan je nu de micro:bit een ander deuntje laten afspelen? (Je kan de partituren van zowat eender wat vinden op Google Afbeeldingen door "piano tabs" achter je zoekterm te zetten!)
 
@@ -350,7 +379,14 @@ music.play(tune)
 In deze versie is de laatste noot aangegeven als "G4:8". Dit kan je lezen als "Druk op de vierde G(sol)-toets van een pianoklavier, voor 8 tellen lang."
 
 
-### Keep it steady! - multiplayer spel (gemiddeld)
+### Balansspel, voor meerdere spelers (gemiddeld)
+
+Het doel van dit contactspel is eenvoudig: iedereen heeft een micro:bit in z'n hand vast en wandelt rond. Je moet je eigen micro:bit steeds zo horizontaal mogelijk houden, maar om te winnen moet je de micro:bits van je tegenstanders uit balans halen. Als je micro:bit uit balans is val je uit het spel. Je kan bv. ee afbeelding tonen op je micro:bit zodra je uit balans bent.
+
+**Hints!**
+
+- Om de balans van de micro:bit te meten kunnen we van de accelerometer gebruik maken. De waarde ```accelerometer.get_x()``` geeft een getal tussen -1024 en 1024 terug om aan te geven in hoeverre de micro:bit naar links/rechts is gedraaid. Als dit getal dus rond de 0 schommelt is de micro:bit in balans (, althans wat rotatie rond de X-as betreft). Analoog hieraan duidt ```accelerometer.get_y()``` aan hoever de micro:bit naar voor/achter is gedraaid, ook met een waarde tussen -1024 en 1024.
+- Om rond te kunnen wandelen met de micro:bit moet je deze met de batterij aansluiten.
 
 ### Het noorden kwijt? (gemiddeld)
 
@@ -365,26 +401,34 @@ if not compass.is_calibrated():
 De tweede en derde instructies zorgen ervoor dat, mocht het kompas van de micro:bit niet gekalibreerd zijn, dan wordt de kalibratie eerst uitgevoerd.
 
 Om het programma verder af te maken heb je nog het volgende nodig:
-- ```compass.heading()``` geeft je de huidige waarde van het kompas als een getal tussen 0 en 360. Als de waarde 0 is, wijst de micro:bit nu naar het noorden. 
+
+- ```compass.heading()``` geeft je de huidige waarde van het kompas als een getal tussen 0 en 360. Als de waarde 0 is, wijst de micro:bit nu naar het noorden.
+- Er zijn verschillende ingebouwde afbeeldingen beschikbaar van pijlen die naar verschillende richtingen wijzen. Deze kan je gebruiken om het noorden (ongeveer) aan te geven.
 
 ### Dobbelstenen maken (gemiddeld)
 
+In deze oefeningen maken we van de micro:bit een dobbelsteen: telkens je schudt met de micro:bit, zal er een willekeurig getal op het scherm getoond worden.
+
+**Hints!** 
+
+- Om te bepalen of er met de micro:bit is geschud kan je volgende conditie gebruiken: ```accelerometer.was_gesture("shake")```
+- Om een willekeurig getal te verkrijgen gebruik je deze waarde: ```random.randint(1, 6)```
+- Vergeet ook niet om bovenaan om ```import random``` te gebruiken.
+
 ### Simon - geheugenspel (moeilijk)
 
-### Bop it (moeilijk)
+Bedoeling van het "Simon" geheugenspel is om een reeks van patronen te tonen, waarna iemand deze reeks moet herhalen. In ons geval zullen we een reeks pijlen tonen, om aan te duiden in welke richting de micro:bit.
 
-### Mini-tetris (keimoeilijk)
+**Hints!**
+
+- Dit is de lijst van mogelijke richtingen waarop je de micro:bit kan draaien.
+- ```gestures = ["up", "down", "left", "right"]```
+- Je kan een willekeurige waarde kiezen uit een gegeven lijst. Dit is vanwege ```random.choice(gestures_simple).```
+
+### Mini-tetris (moeilijk)
 
 Kan je een tetris spel maken waar de blokjes altijd 1x1 groot zijn? (Grotere blokjes zijn niet echt praktisch op zo'n klein scherm :) )
 
-## 4. Hints!
+**Hints!**
 
-### Animaties maken
-
-- Een animatie is niets meer dan een aantal verschillende tekeningen die snel na elkaar getoond worden.
-- Met de ```display.clear()``` instructie kan je je scherm in één keer wissen.
-- Je kan ```sleep``` gebruiken om even te wachten nadat een tekening getoond is.
-
-### Muziek maken
-
-- (Geen hints)
+- Dit geeft een getal om de helderheid van een lamp te verkrijgen: ```microbit.display.get_pixel(x, y)```
