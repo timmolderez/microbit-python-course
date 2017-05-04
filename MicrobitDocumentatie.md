@@ -4,8 +4,6 @@
 
 <h1>Creatief programmeren met Python & micro:bit</h1>
 
-(27/03/'17) - Tim Molderez en Mathijs Saey
-
 <h2>Inhoudstafel</h2>
 
 [TOC]
@@ -38,7 +36,7 @@ Op de achterkant van de micro:bit vind je het volgende:
 
 De micro:bit op zichzelf zal niets doen als er geen programma op staat. Om de micro:bit tot leven te brengen gaan we leren om er programma's voor te schrijven.
 
-Een programma is op zich niets meer dan een lijst van instructies die je aan een computer geeft om uit te voeren. Als je mensen kan rond bevelen kan je dus ook programmeren :) Net zoals bij mensen, kan je best duidelijke instructies geven  aan je computer, in een taal die de computer begrijpt. De programmeertaal die we voor de micro:bit gaan gebruiken noemt [Python](https://www.python.org).
+Een programma is op zich niets meer dan een lijst van instructies die je aan een computer geeft om uit te voeren. Als je mensen kan rond bevelen kan je dus ook programmeren :) Net zoals bij mensen, kan je best duidelijke instructies geven  aan je computer, in een taal die de computer begrijpt. De programmeertaal die we voor de micro:bit gaan gebruiken heet [Python](https://www.python.org).
 
 ![](img/python-logo.png)
 
@@ -56,6 +54,7 @@ display.scroll("Hello!")
 Het bestaat uit twee instructies. Het eerste, ```from microbit import *```, duidt aan welke "woordenschat" nodig is in ons programma. In bijna alle programma's die we gaan schrijven zal deze instructie sowieso bovenaan staan. De tweede instructie, ```display.scroll("Hello!")```, zal de tekst ```Hello!``` op het micro:bit scherm tonen.
 
 Om dit programma nu op de micro:bit te zetten, doe je het volgende:
+
 1. Sluit de micro:bit aan op de computer met de USB-kabel.
 1. Open de ["Mu" programmeeromgeving](https://codewith.mu), waarmee je Python programma's kan schrijven en deze naar de micro:bit sturen.
 1. Geef de twee instructies van het programma in. (zoals aangegeven in de afbeelding hieronder)
@@ -90,13 +89,13 @@ display.scroll("Bye :)")
 
 [Bekijk de uitvoering van dit programma](ani/hello-bye.gif)
 
-De instructies van een programma worden in volgorde uitgevoerd: eerst de woordenschat aangeven, dan ```Hello!``` tonen, dan de ```sleep(3000)``` instructie (waarmee je de micro:bit 3000 milliseconden laat wachten), en tenslotte ```Bye!``` tonen.
+De instructies van een programma worden in volgorde uitgevoerd: eerst de woordenschat aangeven, dan ```Hello!``` tonen, dan de ```sleep(3000)``` instructie (waarmee je de micro:bit 3000 milliseconden laat wachten), en tenslotte ```Bye :)``` tonen.
 
 
 
 ### 2.3. Waardes onthouden
 
-Een belangrijk onderdeel van programma's schrijven is dat, tijdens de uitvoering van je programma, je allerlei informatie wil onthouden zodat je ze later in je programma kan gebruiken. Om een eenvoudig voorbeeld te geven:
+Een belangrijk onderdeel van programma's schrijven is dat, tijdens de uitvoering van je programma, je allerlei informatie wil onthouden zodat je die informatie later in je programma kan gebruiken. Om een eenvoudig voorbeeld te geven:
 
 ```python
 from microbit import *
@@ -110,29 +109,29 @@ display.scroll(firstname)
 
 [Bekijk de uitvoering van dit programma](ani/vars.gif)
 
-Een nieuwe instructie die je hier ziet staan is ```firstname="Joske"```.
+Een nieuwe instructie die je hier ziet staan is ```firstname = "Joske"```.
 
 Dit kan je lezen als "Vanaf nu moet je de tekst ```Joske``` onthouden onder de naam ```firstname```." Of, om het preciezer te zeggen: "Vanaf nu is de *variabele* ```firstname``` gelijk aan de tekst ```Joske```."
 
-Als je die variabele ```firstname``` dan later in je programma vernoemd, dan zal dit tijdens de uitvoering vervangen worden door ```Joske```. In dit programma wordt de variabele bv. gebruikt in de instructie ```display.scroll(firstname)```.
+Als je die variabele ```firstname``` dan later in je programma vernoemt, dan zal dit tijdens de uitvoering vervangen worden door ```Joske```. In dit programma wordt de variabele bv. gebruikt in de instructie ```display.scroll(firstname)```.
 
-**Belangrijk!** Voor alle talen, inclusief programmeertalen als Python, zijn er grammatica regels. Het wijzigen van een variabele, dus de ```firstname="Joske"``` instructie, heeft in het algemeen de volgende vorm:
+**Belangrijk!** Voor alle talen, inclusief programmeertalen als Python, zijn er grammatica regels. Het wijzigen van een variabele, dus de ```firstname = "Joske"``` instructie, heeft in het algemeen de volgende vorm:
 
 ```python
-variabele=waarde
+variabele = waarde
 ```
 
 Een "waarde" kan allerlei dingen zijn: een stuk tekst, een geheel getal, een reëel getal, of meer complexe vormen van informatie (waar we nu niet op in gaan). Hieronder nog enkele concrete voorbeelden waarin variabelen gewijzigd worden:
 
 ```python
-street="Trammezandlei"
-housenr=122
-pi=3.14159
+street = "Trammezandlei"
+housenr = 122
+pi = 3.14159
 ``` 
 Iets wat uiteindelijk een waarde zal worden mag ook, bijvoorbeeld een berekening:
 
 ```python
-fahrenheit= 20 * 9/5 + 32
+fahrenheit = 20 * 9/5 + 32
 ```
 
 ### 2.4. Tekeningen maken
@@ -185,7 +184,7 @@ display.scroll("Go!")
 
 [Bekijk de uitvoering van dit programma](ani/go.gif)
 
-Het enige speciale in dit programma zijn de ```x = x + 1``` instructies. Deze kan je lezen als "Variabele ```x``` is vanaf nu gelijk aan: de *oude* waarde van ```x``` plus 1." Of korter gezegd: "Verhoog ```x``` de waarde van ```x``` met 1."
+Het enige speciale in dit programma zijn de ```x = x + 1``` instructies. Deze kan je lezen als "Variabele ```x``` is vanaf nu gelijk aan: de *oude* waarde van ```x``` plus 1." Of korter gezegd: "Verhoog de waarde van ```x``` met 1."
 
 **Even toetsen!** Wat is de waarde van ```y``` op het einde van dit programma?:
 
@@ -238,9 +237,9 @@ Er zijn veel mogelijke vormen van condities, en we zullen er nog enkele van gebr
 
 ```c!=6``` Is ```c``` *niet* gelijk aan 6?
 
-```d>=7 and e == 8``` Is ```d``` ≥  5 **én** ```e``` gelijk aan 8?
+```d>=7 and e == 8``` Is ```d``` ≥  7 **én** ```e``` gelijk aan 8?
 
-```d>=7 or e == 8``` Is ```d``` ≥  5 **of** ```e``` gelijk aan 8?
+```d>=7 or e == 8``` Is ```d``` ≥  7 **of** ```e``` gelijk aan 8?
 
 ```button_a.ispressed()``` Is de A-knop van de micro-bit nu ingedrukt?
 

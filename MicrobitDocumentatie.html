@@ -517,8 +517,6 @@ pre.line-numbers > code {
 
 <h1>Creatief programmeren met Python & micro:bit</h1>
 
-<p>(27/03/&#39;17) - Tim Molderez en Mathijs Saey</p>
-
 <h2>Inhoudstafel</h2>
 
 <ul class="toc">
@@ -618,7 +616,7 @@ pre.line-numbers > code {
 
 <p>De micro:bit op zichzelf zal niets doen als er geen programma op staat. Om de micro:bit tot leven te brengen gaan we leren om er programma&#39;s voor te schrijven.</p>
 
-<p>Een programma is op zich niets meer dan een lijst van instructies die je aan een computer geeft om uit te voeren. Als je mensen kan rond bevelen kan je dus ook programmeren :) Net zoals bij mensen, kan je best duidelijke instructies geven  aan je computer, in een taal die de computer begrijpt. De programmeertaal die we voor de micro:bit gaan gebruiken noemt <a href="https://www.python.org">Python</a>.</p>
+<p>Een programma is op zich niets meer dan een lijst van instructies die je aan een computer geeft om uit te voeren. Als je mensen kan rond bevelen kan je dus ook programmeren :) Net zoals bij mensen, kan je best duidelijke instructies geven  aan je computer, in een taal die de computer begrijpt. De programmeertaal die we voor de micro:bit gaan gebruiken heet <a href="https://www.python.org">Python</a>.</p>
 
 <p><img src="img/python-logo.png" alt=""></p>
 
@@ -633,12 +631,15 @@ display.scroll(&quot;Hello!&quot;)</code></pre></div>
 
 <p>Het bestaat uit twee instructies. Het eerste, <code>from microbit import *</code>, duidt aan welke &quot;woordenschat&quot; nodig is in ons programma. In bijna alle programma&#39;s die we gaan schrijven zal deze instructie sowieso bovenaan staan. De tweede instructie, <code>display.scroll(&quot;Hello!&quot;)</code>, zal de tekst <code>Hello!</code> op het micro:bit scherm tonen.</p>
 
-<p>Om dit programma nu op de micro:bit te zetten, doe je het volgende:
-1. Sluit de micro:bit aan op de computer met de USB-kabel.
-1. Open de <a href="https://codewith.mu">&quot;Mu&quot; programmeeromgeving</a>, waarmee je Python programma&#39;s kan schrijven en deze naar de micro:bit sturen.
-1. Geef de twee instructies van het programma in. (zoals aangegeven in de afbeelding hieronder)
-1. Klik nu op de &quot;Flash&quot; knop. Deze knop zal je programma naar de micro:bit sturen. (Je zal het oranje lampje op de achterkant van de micro:bit nu zien blinken. Dit kan enkele seconden duren.)
-1. Zodra het programma verstuurd is zal het automatisch starten.</p>
+<p>Om dit programma nu op de micro:bit te zetten, doe je het volgende:</p>
+
+<ol>
+<li>Sluit de micro:bit aan op de computer met de USB-kabel.</li>
+<li>Open de <a href="https://codewith.mu">&quot;Mu&quot; programmeeromgeving</a>, waarmee je Python programma&#39;s kan schrijven en deze naar de micro:bit sturen.</li>
+<li>Geef de twee instructies van het programma in. (zoals aangegeven in de afbeelding hieronder)</li>
+<li>Klik nu op de &quot;Flash&quot; knop. Deze knop zal je programma naar de micro:bit sturen. (Je zal het oranje lampje op de achterkant van de micro:bit nu zien blinken. Dit kan enkele seconden duren.)</li>
+<li>Zodra het programma verstuurd is zal het automatisch starten.</li>
+</ol>
 
 <p><img src="img/hello.png" alt=""></p>
 
@@ -666,11 +667,11 @@ display.scroll(&quot;Bye :)&quot;)</code></pre></div>
 
 <p><a href="ani/hello-bye.gif">Bekijk de uitvoering van dit programma</a></p>
 
-<p>De instructies van een programma worden in volgorde uitgevoerd: eerst de woordenschat aangeven, dan <code>Hello!</code> tonen, dan de <code>sleep(3000)</code> instructie (waarmee je de micro:bit 3000 milliseconden laat wachten), en tenslotte <code>Bye!</code> tonen.</p>
+<p>De instructies van een programma worden in volgorde uitgevoerd: eerst de woordenschat aangeven, dan <code>Hello!</code> tonen, dan de <code>sleep(3000)</code> instructie (waarmee je de micro:bit 3000 milliseconden laat wachten), en tenslotte <code>Bye :)</code> tonen.</p>
 
 <h3 id="toc_4">2.3. Waardes onthouden</h3>
 
-<p>Een belangrijk onderdeel van programma&#39;s schrijven is dat, tijdens de uitvoering van je programma, je allerlei informatie wil onthouden zodat je ze later in je programma kan gebruiken. Om een eenvoudig voorbeeld te geven:</p>
+<p>Een belangrijk onderdeel van programma&#39;s schrijven is dat, tijdens de uitvoering van je programma, je allerlei informatie wil onthouden zodat je die informatie later in je programma kan gebruiken. Om een eenvoudig voorbeeld te geven:</p>
 
 <div><pre class="line-numbers"><code class="language-python">from microbit import *
 firstname = &quot;Joske&quot;
@@ -682,25 +683,25 @@ display.scroll(firstname)</code></pre></div>
 
 <p><a href="ani/vars.gif">Bekijk de uitvoering van dit programma</a></p>
 
-<p>Een nieuwe instructie die je hier ziet staan is <code>firstname=&quot;Joske&quot;</code>.</p>
+<p>Een nieuwe instructie die je hier ziet staan is <code>firstname = &quot;Joske&quot;</code>.</p>
 
 <p>Dit kan je lezen als &quot;Vanaf nu moet je de tekst <code>Joske</code> onthouden onder de naam <code>firstname</code>.&quot; Of, om het preciezer te zeggen: &quot;Vanaf nu is de <em>variabele</em> <code>firstname</code> gelijk aan de tekst <code>Joske</code>.&quot;</p>
 
-<p>Als je die variabele <code>firstname</code> dan later in je programma vernoemd, dan zal dit tijdens de uitvoering vervangen worden door <code>Joske</code>. In dit programma wordt de variabele bv. gebruikt in de instructie <code>display.scroll(firstname)</code>.</p>
+<p>Als je die variabele <code>firstname</code> dan later in je programma vernoemt, dan zal dit tijdens de uitvoering vervangen worden door <code>Joske</code>. In dit programma wordt de variabele bv. gebruikt in de instructie <code>display.scroll(firstname)</code>.</p>
 
-<p><strong>Belangrijk!</strong> Voor alle talen, inclusief programmeertalen als Python, zijn er grammatica regels. Het wijzigen van een variabele, dus de <code>firstname=&quot;Joske&quot;</code> instructie, heeft in het algemeen de volgende vorm:</p>
+<p><strong>Belangrijk!</strong> Voor alle talen, inclusief programmeertalen als Python, zijn er grammatica regels. Het wijzigen van een variabele, dus de <code>firstname = &quot;Joske&quot;</code> instructie, heeft in het algemeen de volgende vorm:</p>
 
-<div><pre class="line-numbers"><code class="language-python">variabele=waarde</code></pre></div>
+<div><pre class="line-numbers"><code class="language-python">variabele = waarde</code></pre></div>
 
 <p>Een &quot;waarde&quot; kan allerlei dingen zijn: een stuk tekst, een geheel getal, een reëel getal, of meer complexe vormen van informatie (waar we nu niet op in gaan). Hieronder nog enkele concrete voorbeelden waarin variabelen gewijzigd worden:</p>
 
-<div><pre class="line-numbers"><code class="language-python">street=&quot;Trammezandlei&quot;
-housenr=122
-pi=3.14159</code></pre></div>
+<div><pre class="line-numbers"><code class="language-python">street = &quot;Trammezandlei&quot;
+housenr = 122
+pi = 3.14159</code></pre></div>
 
 <p>Iets wat uiteindelijk een waarde zal worden mag ook, bijvoorbeeld een berekening:</p>
 
-<div><pre class="line-numbers"><code class="language-python">fahrenheit= 20 * 9/5 + 32</code></pre></div>
+<div><pre class="line-numbers"><code class="language-python">fahrenheit = 20 * 9/5 + 32</code></pre></div>
 
 <h3 id="toc_5">2.4. Tekeningen maken</h3>
 
@@ -750,7 +751,7 @@ display.scroll(&quot;Go!&quot;)</code></pre></div>
 
 <p><a href="ani/go.gif">Bekijk de uitvoering van dit programma</a></p>
 
-<p>Het enige speciale in dit programma zijn de <code>x = x + 1</code> instructies. Deze kan je lezen als &quot;Variabele <code>x</code> is vanaf nu gelijk aan: de <em>oude</em> waarde van <code>x</code> plus 1.&quot; Of korter gezegd: &quot;Verhoog <code>x</code> de waarde van <code>x</code> met 1.&quot;</p>
+<p>Het enige speciale in dit programma zijn de <code>x = x + 1</code> instructies. Deze kan je lezen als &quot;Variabele <code>x</code> is vanaf nu gelijk aan: de <em>oude</em> waarde van <code>x</code> plus 1.&quot; Of korter gezegd: &quot;Verhoog de waarde van <code>x</code> met 1.&quot;</p>
 
 <p><strong>Even toetsen!</strong> Wat is de waarde van <code>y</code> op het einde van dit programma?:</p>
 
@@ -797,9 +798,9 @@ display.scroll(&quot;Go!&quot;)</code></pre></div>
 
 <p><code>c!=6</code> Is <code>c</code> <em>niet</em> gelijk aan 6?</p>
 
-<p><code>d&gt;=7 and e == 8</code> Is <code>d</code> ≥  5 <strong>én</strong> <code>e</code> gelijk aan 8?</p>
+<p><code>d&gt;=7 and e == 8</code> Is <code>d</code> ≥  7 <strong>én</strong> <code>e</code> gelijk aan 8?</p>
 
-<p><code>d&gt;=7 or e == 8</code> Is <code>d</code> ≥  5 <strong>of</strong> <code>e</code> gelijk aan 8?</p>
+<p><code>d&gt;=7 or e == 8</code> Is <code>d</code> ≥  7 <strong>of</strong> <code>e</code> gelijk aan 8?</p>
 
 <p><code>button_a.ispressed()</code> Is de A-knop van de micro-bit nu ingedrukt?</p>
 
