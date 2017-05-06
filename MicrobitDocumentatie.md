@@ -74,7 +74,7 @@ Als alles goed is gelukt zal je nu het volgende zien:
 **Tip!** Je zal ook merken dat de Mu programmeeromgeving sommige woorden in je instructies een specifieke kleur geeft, bijvoorbeeld de tekst ```"Hello!"```. Dit is zo gedaan opdat je je programma gemakkelijker kan lezen, wat duidelijk zal worden naarmate onze programma's iets langer en complexer zullen worden.
 
 *Extra info over de* ```from microbit import *``` *instructie: Deze instructie duidt aan welk stuk "woordenschat" we nodig hebben in ons programma. Dit is net zoals je de woordenschat van bv. het Nederlands kan opdelen in stukken: basiswoorden, woorden over sport, woorden over wetenschap, enz.
-Sommige woorden kunnen echter in meerdere stukken voorkomen; "golf" heeft bv. meerdere betekenissen: een natuurverschijnsel, een sport, radiogolven, een baai, ... Opdat programma's duidelijk en ondubbelzinnig zijn, moeten we dus eerst expliciet aangeven welke woordenschat nodig is. In dit geval, de "microbit" basiswoordenschat. Hiernaast is er ook bv. woordenschat om muziek te spelen op de microbit, draadloos te communiceren, ...*
+Sommige woorden kunnen echter in meerdere stukken voorkomen; "golf" heeft bv. meerdere betekenissen: een natuurverschijnsel, een sport, radiogolven, een baai, ... Opdat programma's duidelijk en ondubbelzinnig zijn, moeten we dus eerst expliciet aangeven welke woordenschat nodig is. In dit geval, de "microbit" basiswoordenschat. Hiernaast is er ook bv. woordenschat om muziek te spelen op de micro:bit, draadloos te communiceren, ...*
 
 ### 2.2. Meerdere instructies
 
@@ -326,11 +326,11 @@ Eerst zullen we ons parcours maken :
 6. Verbind het parcours a.d.h.v. krokodillenklemmen met de GND (aarding) aansluiting op je micro-bit.
 7. Knip nog een klein stukje draad.
 8. Maak er een lus van.
-9. Verbind de lus met je microbit op de 0 aansluiting.
+9. Verbind de lus met je micro:bit op de 0 aansluiting.
 
 **Hints!**
 
-- Er zal enkel stroom door het parcours lopen als de lus ermee verbonden is. Met andere woorden, in dat geval heb je het spel verloren. 
+- Er zal enkel stroom door het parcours lopen als de lus er contact mee maakt. Met andere woorden, in dat geval heb je het spel verloren. 
 - Je kan nagaan of er stroom zit op aansluiting 0 met volgende conditie ```pin0.is_touched()```.
 - Om te testen of een conditie *niet* waar is, typ je er ```not``` voor.
 
@@ -378,13 +378,15 @@ music.play(tune)
 In deze versie is de laatste noot aangegeven als "G4:8". Dit kan je lezen als "Druk op de vierde G(sol)-toets van een pianoklavier, voor 8 tellen lang."
 
 
-### Balansspel, voor meerdere spelers (gemiddeld)
+### Balansspel, voor één of meerdere spelers (gemiddeld)
 
-Het doel van dit contactspel is eenvoudig: iedereen heeft een micro:bit in z'n hand vast en wandelt rond. Je moet je eigen micro:bit steeds zo horizontaal mogelijk houden, maar om te winnen moet je de micro:bits van je tegenstanders uit balans halen. Als je micro:bit uit balans is val je uit het spel. Je kan bv. ee afbeelding tonen op je micro:bit zodra je uit balans bent.
+In dit spel is het de bedoeling dat de speler(s) een bepaald parcours afleggen, waarbij je je micro:bit in de hand vasthoudt en deze steeds zo horizontaal mogelijk moet houden. Als je micro:bit uit balans is, val je weg uit het spel. Je kan bv. een afbeelding op je micro:bit tonen zodra je uit balans bent. Hoe je het spel wint kan je kiezen: bv. door het parcours te voltooien, of door als enige over te blijven.
+
+Je kan het parcours zo moeilijk of makkelijk maken als je zelf wil, waarbij je bv. tussen stoelen moet slalommen, onder tafels moet kruipen, enz. Je kan het spel ook moeilijker maken door toe te laten dat spelers elkaar mogen aanraken. (Als je iemand anders uit balans probeert te brengen riskeer je natuurlijk dat ze zullen terugduwen :) )
 
 **Hints!**
 
-- Om de balans van de micro:bit te meten kunnen we van de accelerometer gebruik maken. De waarde ```accelerometer.get_x()``` geeft een getal tussen -1024 en 1024 terug om aan te geven in hoeverre de micro:bit naar links/rechts is gedraaid. Als dit getal dus rond de 0 schommelt is de micro:bit in balans (, althans wat rotatie rond de X-as betreft). Analoog hieraan duidt ```accelerometer.get_y()``` aan hoever de micro:bit naar voor/achter is gedraaid, ook met een waarde tussen -1024 en 1024.
+- Om de balans van de micro:bit te meten kunnen we van de accelerometer gebruik maken. De waarde ```accelerometer.get_x()``` geeft een getal tussen -1024 en 1024 terug om aan te geven in hoeverre de micro:bit naar links/rechts is gedraaid. Als dit getal dus rond de 0 schommelt is de micro:bit in balans (althans wat rotatie rond de X-as betreft). Analoog hieraan duidt ```accelerometer.get_y()``` aan hoever de micro:bit naar voor/achter is gedraaid, ook met een waarde tussen -1024 en 1024.
 - Om rond te kunnen wandelen met de micro:bit moet je deze met de batterij aansluiten.
 
 ### Het noorden kwijt? (gemiddeld)
@@ -397,7 +399,7 @@ if not compass.is_calibrated():
     compass.calibrate()
 ```
 
-De tweede en derde instructies zorgen ervoor dat, mocht het kompas van de micro:bit niet gekalibreerd zijn, dan wordt de kalibratie eerst uitgevoerd.
+De tweede en derde instructies zorgen ervoor dat, mocht het kompas van de micro:bit niet gekalibreerd zijn, dan wordt de kalibratieprocedure eerst uitgevoerd.
 
 Om het programma verder af te maken heb je nog het volgende nodig:
 
@@ -411,18 +413,21 @@ In deze oefeningen maken we van de micro:bit een dobbelsteen: telkens je schudt 
 **Hints!** 
 
 - Om te bepalen of er met de micro:bit is geschud kan je volgende conditie gebruiken: ```accelerometer.was_gesture("shake")```
-- Om een willekeurig getal te verkrijgen gebruik je deze waarde: ```random.randint(1, 6)```
-- Vergeet ook niet om bovenaan om ```import random``` te gebruiken.
+- Om een willekeurig getal tussen 1 en 6 te verkrijgen gebruik je deze uitdrukking: ```random.randint(1, 6)```
+- Vergeet hierbij ook niet om bovenaan ```import random``` te gebruiken.
 
 ### Simon - geheugenspel (moeilijk)
 
-Bedoeling van het "Simon" geheugenspel is om een reeks van patronen te tonen, waarna iemand deze reeks moet herhalen. In ons geval zullen we een reeks pijlen tonen, om aan te duiden in welke richting de micro:bit.
+In het oorspronkelijke "Simon" geheugenspel wordt een willekeurige reeks van kleuren getoond. De speler moet deze reeks dan onthouden en terug correct kunnen ingeven. Daarna begint het spel opnieuw, maar met een nieuwe reeks.
+
+Met de micro:bit gaan we een variant van "Simon" maken: we tonen op het scherm eerst een reeks van pijlen (links,rechts, boven of onder). De speler moet vervolgens deze reeks correct ingeven door de micro:bit naar links/rechts/boven/onder te kantelen.
 
 **Hints!**
 
-- Dit is de lijst van mogelijke richtingen waarop je de micro:bit kan draaien.
-- ```gestures = ["up", "down", "left", "right"]```
-- Je kan een willekeurige waarde kiezen uit een gegeven lijst. Dit is vanwege ```random.choice(gestures_simple).```
+- Dit is de lijst van mogelijke richtingen waarin je de micro:bit kan kantelen. ```gestures = ["up", "down", "left", "right"]```
+- Je kan een willekeurige waarde kiezen uit de lijst met volgende uitdrukking: ```random.choice(gestures).```
+- Je kan nakijken of je de micro:bit momenteel naar links hebt gekanteld met volgende conditie: ```accelerometer.current_gesture() == "left"```
+- Je kan de reeks van pijlen steeds moeilijker maken door elke pijl korter weer te geven op het scherm, of door de reeks langer te maken met meer pijlen.
 
 ### Mini-tetris (moeilijk)
 
@@ -430,4 +435,4 @@ Kan je een tetris spel maken waar de blokjes altijd 1x1 groot zijn? (Grotere blo
 
 **Hints!**
 
-- Dit geeft een getal om de helderheid van een lamp te verkrijgen: ```microbit.display.get_pixel(x, y)```
+- Om na te gaan of een lamp momenteel aan of uit is kan je volgende uitdrukking gebruiken: ```microbit.display.get_pixel(x, y)``` Dit geeft de helderheid van de lamp op kolom ```x```, rij ```y```, terug. 

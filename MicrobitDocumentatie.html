@@ -565,7 +565,7 @@ pre.line-numbers > code {
 <a href="#toc_13">Muziek maken (eenvoudig)</a>
 </li>
 <li>
-<a href="#toc_14">Balansspel, voor meerdere spelers (gemiddeld)</a>
+<a href="#toc_14">Balansspel, voor één of meerdere spelers (gemiddeld)</a>
 </li>
 <li>
 <a href="#toc_15">Het noorden kwijt? (gemiddeld)</a>
@@ -654,7 +654,7 @@ display.scroll(&quot;Hello!&quot;)</code></pre></div>
 <p><strong>Tip!</strong> Je zal ook merken dat de Mu programmeeromgeving sommige woorden in je instructies een specifieke kleur geeft, bijvoorbeeld de tekst <code>&quot;Hello!&quot;</code>. Dit is zo gedaan opdat je je programma gemakkelijker kan lezen, wat duidelijk zal worden naarmate onze programma&#39;s iets langer en complexer zullen worden.</p>
 
 <p><em>Extra info over de</em> <code>from microbit import *</code> <em>instructie: Deze instructie duidt aan welk stuk &quot;woordenschat&quot; we nodig hebben in ons programma. Dit is net zoals je de woordenschat van bv. het Nederlands kan opdelen in stukken: basiswoorden, woorden over sport, woorden over wetenschap, enz.
-Sommige woorden kunnen echter in meerdere stukken voorkomen; &quot;golf&quot; heeft bv. meerdere betekenissen: een natuurverschijnsel, een sport, radiogolven, een baai, ... Opdat programma&#39;s duidelijk en ondubbelzinnig zijn, moeten we dus eerst expliciet aangeven welke woordenschat nodig is. In dit geval, de &quot;microbit&quot; basiswoordenschat. Hiernaast is er ook bv. woordenschat om muziek te spelen op de microbit, draadloos te communiceren, ...</em></p>
+Sommige woorden kunnen echter in meerdere stukken voorkomen; &quot;golf&quot; heeft bv. meerdere betekenissen: een natuurverschijnsel, een sport, radiogolven, een baai, ... Opdat programma&#39;s duidelijk en ondubbelzinnig zijn, moeten we dus eerst expliciet aangeven welke woordenschat nodig is. In dit geval, de &quot;microbit&quot; basiswoordenschat. Hiernaast is er ook bv. woordenschat om muziek te spelen op de micro:bit, draadloos te communiceren, ...</em></p>
 
 <h3 id="toc_3">2.2. Meerdere instructies</h3>
 
@@ -884,13 +884,13 @@ while true:
 <li>Verbind het parcours a.d.h.v. krokodillenklemmen met de GND (aarding) aansluiting op je micro-bit.</li>
 <li>Knip nog een klein stukje draad.</li>
 <li>Maak er een lus van.</li>
-<li>Verbind de lus met je microbit op de 0 aansluiting.</li>
+<li>Verbind de lus met je micro:bit op de 0 aansluiting.</li>
 </ol>
 
 <p><strong>Hints!</strong></p>
 
 <ul>
-<li>Er zal enkel stroom door het parcours lopen als de lus ermee verbonden is. Met andere woorden, in dat geval heb je het spel verloren. </li>
+<li>Er zal enkel stroom door het parcours lopen als de lus er contact mee maakt. Met andere woorden, in dat geval heb je het spel verloren. </li>
 <li>Je kan nagaan of er stroom zit op aansluiting 0 met volgende conditie <code>pin0.is_touched()</code>.</li>
 <li>Om te testen of een conditie <em>niet</em> waar is, typ je er <code>not</code> voor.</li>
 </ul>
@@ -932,14 +932,16 @@ music.play(tune)</code></pre></div>
 
 <p>In deze versie is de laatste noot aangegeven als &quot;G4:8&quot;. Dit kan je lezen als &quot;Druk op de vierde G(sol)-toets van een pianoklavier, voor 8 tellen lang.&quot;</p>
 
-<h3 id="toc_14">Balansspel, voor meerdere spelers (gemiddeld)</h3>
+<h3 id="toc_14">Balansspel, voor één of meerdere spelers (gemiddeld)</h3>
 
-<p>Het doel van dit contactspel is eenvoudig: iedereen heeft een micro:bit in z&#39;n hand vast en wandelt rond. Je moet je eigen micro:bit steeds zo horizontaal mogelijk houden, maar om te winnen moet je de micro:bits van je tegenstanders uit balans halen. Als je micro:bit uit balans is val je uit het spel. Je kan bv. ee afbeelding tonen op je micro:bit zodra je uit balans bent.</p>
+<p>In dit spel is het de bedoeling dat de speler(s) een bepaald parcours afleggen, waarbij je je micro:bit in de hand vasthoudt en deze steeds zo horizontaal mogelijk moet houden. Als je micro:bit uit balans is, val je weg uit het spel. Je kan bv. een afbeelding op je micro:bit tonen zodra je uit balans bent. Hoe je het spel wint kan je kiezen: bv. door het parcours te voltooien, of door als enige over te blijven.</p>
+
+<p>Je kan het parcours zo moeilijk of makkelijk maken als je zelf wil, waarbij je bv. tussen stoelen moet slalommen, onder tafels moet kruipen, enz. Je kan het spel ook moeilijker maken door toe te laten dat spelers elkaar mogen aanraken. (Als je iemand anders uit balans probeert te brengen riskeer je natuurlijk dat ze zullen terugduwen :) )</p>
 
 <p><strong>Hints!</strong></p>
 
 <ul>
-<li>Om de balans van de micro:bit te meten kunnen we van de accelerometer gebruik maken. De waarde <code>accelerometer.get_x()</code> geeft een getal tussen -1024 en 1024 terug om aan te geven in hoeverre de micro:bit naar links/rechts is gedraaid. Als dit getal dus rond de 0 schommelt is de micro:bit in balans (, althans wat rotatie rond de X-as betreft). Analoog hieraan duidt <code>accelerometer.get_y()</code> aan hoever de micro:bit naar voor/achter is gedraaid, ook met een waarde tussen -1024 en 1024.</li>
+<li>Om de balans van de micro:bit te meten kunnen we van de accelerometer gebruik maken. De waarde <code>accelerometer.get_x()</code> geeft een getal tussen -1024 en 1024 terug om aan te geven in hoeverre de micro:bit naar links/rechts is gedraaid. Als dit getal dus rond de 0 schommelt is de micro:bit in balans (althans wat rotatie rond de X-as betreft). Analoog hieraan duidt <code>accelerometer.get_y()</code> aan hoever de micro:bit naar voor/achter is gedraaid, ook met een waarde tussen -1024 en 1024.</li>
 <li>Om rond te kunnen wandelen met de micro:bit moet je deze met de batterij aansluiten.</li>
 </ul>
 
@@ -951,7 +953,7 @@ music.play(tune)</code></pre></div>
 if not compass.is_calibrated():
     compass.calibrate()</code></pre></div>
 
-<p>De tweede en derde instructies zorgen ervoor dat, mocht het kompas van de micro:bit niet gekalibreerd zijn, dan wordt de kalibratie eerst uitgevoerd.</p>
+<p>De tweede en derde instructies zorgen ervoor dat, mocht het kompas van de micro:bit niet gekalibreerd zijn, dan wordt de kalibratieprocedure eerst uitgevoerd.</p>
 
 <p>Om het programma verder af te maken heb je nog het volgende nodig:</p>
 
@@ -968,20 +970,23 @@ if not compass.is_calibrated():
 
 <ul>
 <li>Om te bepalen of er met de micro:bit is geschud kan je volgende conditie gebruiken: <code>accelerometer.was_gesture(&quot;shake&quot;)</code></li>
-<li>Om een willekeurig getal te verkrijgen gebruik je deze waarde: <code>random.randint(1, 6)</code></li>
-<li>Vergeet ook niet om bovenaan om <code>import random</code> te gebruiken.</li>
+<li>Om een willekeurig getal tussen 1 en 6 te verkrijgen gebruik je deze uitdrukking: <code>random.randint(1, 6)</code></li>
+<li>Vergeet hierbij ook niet om bovenaan <code>import random</code> te gebruiken.</li>
 </ul>
 
 <h3 id="toc_17">Simon - geheugenspel (moeilijk)</h3>
 
-<p>Bedoeling van het &quot;Simon&quot; geheugenspel is om een reeks van patronen te tonen, waarna iemand deze reeks moet herhalen. In ons geval zullen we een reeks pijlen tonen, om aan te duiden in welke richting de micro:bit.</p>
+<p>In het oorspronkelijke &quot;Simon&quot; geheugenspel wordt een willekeurige reeks van kleuren getoond. De speler moet deze reeks dan onthouden en terug correct kunnen ingeven. Daarna begint het spel opnieuw, maar met een nieuwe reeks.</p>
+
+<p>Met de micro:bit gaan we een variant van &quot;Simon&quot; maken: we tonen op het scherm eerst een reeks van pijlen (links,rechts, boven of onder). De speler moet vervolgens deze reeks correct ingeven door de micro:bit naar links/rechts/boven/onder te kantelen.</p>
 
 <p><strong>Hints!</strong></p>
 
 <ul>
-<li>Dit is de lijst van mogelijke richtingen waarop je de micro:bit kan draaien.</li>
-<li><code>gestures = [&quot;up&quot;, &quot;down&quot;, &quot;left&quot;, &quot;right&quot;]</code></li>
-<li>Je kan een willekeurige waarde kiezen uit een gegeven lijst. Dit is vanwege <code>random.choice(gestures_simple).</code></li>
+<li>Dit is de lijst van mogelijke richtingen waarin je de micro:bit kan kantelen. <code>gestures = [&quot;up&quot;, &quot;down&quot;, &quot;left&quot;, &quot;right&quot;]</code></li>
+<li>Je kan een willekeurige waarde kiezen uit de lijst met volgende uitdrukking: <code>random.choice(gestures).</code></li>
+<li>Je kan nakijken of je de micro:bit momenteel naar links hebt gekanteld met volgende conditie: <code>accelerometer.current_gesture() == &quot;left&quot;</code></li>
+<li>Je kan de reeks van pijlen steeds moeilijker maken door elke pijl korter weer te geven op het scherm, of door de reeks langer te maken met meer pijlen.</li>
 </ul>
 
 <h3 id="toc_18">Mini-tetris (moeilijk)</h3>
@@ -991,7 +996,7 @@ if not compass.is_calibrated():
 <p><strong>Hints!</strong></p>
 
 <ul>
-<li>Dit geeft een getal om de helderheid van een lamp te verkrijgen: <code>microbit.display.get_pixel(x, y)</code></li>
+<li>Om na te gaan of een lamp momenteel aan of uit is kan je volgende uitdrukking gebruiken: <code>microbit.display.get_pixel(x, y)</code> Dit geeft de helderheid van de lamp op kolom <code>x</code>, rij <code>y</code>, terug. </li>
 </ul>
 
 
